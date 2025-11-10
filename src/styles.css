@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+/* Palette ufficiale McLaren + stile base per il Project Work */
+
+:root {
+  --papaya-orange: #ff8000;
+  --black: #000000;
+  --anthracite: #53565a;
+  --dark-grey: #111314;
+  --mid-grey: #484b50;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+main {
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+}
