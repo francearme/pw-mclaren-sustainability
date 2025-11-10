@@ -1,0 +1,159 @@
+/* header.css */
+
+/* Contenitore principale */
+.header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--mid-grey);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar generale */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1300px;
+}
+
+/* Blocchi di navigazione */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link di navigazione */
+.nav-left a,
+.nav-right a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 400;
+  font-size: 0.95rem;
+  transition: color 0.1s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover normale per tutti i link */
+.nav-left a:hover,
+.nav-right a:hover {
+  color: var(--papaya-orange);
+}
+
+/* Evidenziazione McLaren PLUS */
+.nav-left span {
+  color: var(--papaya-orange);
+  font-weight: 500;
+}
+
+/* Effetto slide nero per McLaren PLUS */
+.highlight-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: color 0.1s ease;
+  z-index: 1;
+}
+
+.highlight-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--black);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.highlight-link:hover::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.highlight-link:hover {
+  color: var(--white);
+}
+
+.highlight-link:hover span {
+  color: var(--white);
+}
+
+/* Pulsante STORE */
+.store {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background-color: var(--papaya-orange);
+  color: var(--white) !important;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.1s ease;
+  z-index: 1;
+}
+
+.store::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--black);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.store:hover::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.store:hover {
+  color: var(--white);
+}
+
+/* Logo McLaren allineato a destra */
+.logo {
+  width: 130px;
+  height: auto;
+  margin-left: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  display: block;
+}
+
+/* Responsività mobile */
+@media (max-width: 950px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .logo {
+    margin: 0 auto;
+    width: 150px;
+  }
+}
