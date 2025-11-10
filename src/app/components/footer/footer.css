@@ -1,0 +1,135 @@
+/* footer.component.css */
+/* Footer in stile McLaren, coerente con la brand identity */
+
+/* Contenitore principale */
+.footer {
+  background-color: var(--white);
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 0.9rem;
+  color: var(--anthracite);
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Linea inferiore spessa papaya */
+.footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--papaya-orange);
+}
+
+/* Contenitore interno */
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Linea di separazione */
+.divider {
+  width: 50%;
+  margin: 0.8rem auto;
+  border: none;
+  height: 1px;
+  background-color: var(--mid-grey);
+  opacity: 0.3;
+}
+
+/* Sezione crediti */
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+/* Quadrato papaya */
+.papaya-square {
+  width: 10px;
+  height: 10px;
+  background-color: var(--papaya-orange);
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* McLAREN RACING */
+.brand {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Testo descrittivo */
+.details {
+  color: var(--anthracite);
+  font-weight: 400;
+}
+
+/* Nome autore */
+.author {
+  color: var(--dark-grey);
+  font-weight: 500;
+}
+
+/* Bottone con bordo papaya */
+.highlight-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--black); 
+  font-weight: 600; 
+  padding: 0.35rem 0.8rem;
+  border-radius: 3px;
+  border: 1.5px solid var(--papaya-orange);
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.2s ease, border 0.3s ease;
+}
+
+.highlight-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--black);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.highlight-link:hover::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.highlight-link:hover {
+  color: var(--white);
+  border-color: var(--black);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .divider {
+    width: 75%;
+  }
+
+  .credits {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
