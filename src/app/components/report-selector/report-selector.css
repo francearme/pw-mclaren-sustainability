@@ -1,0 +1,333 @@
+/* report-selector.css */
+
+/* Sezione introduttiva sostenibilità */
+.sustainability-intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  color: var(--anthracite);
+  overflow: hidden;
+}
+
+/* Testo */
+.intro-text {
+  flex: 1 1 50%;
+  padding: 3rem 2rem;
+  z-index: 2;
+  text-align: left;
+}
+
+.intro-text h2 {
+  font-size: 1.3rem;
+  color: var(--anthracite);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  line-height: 1.4;
+  color: var(--anthracite);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+/* Immagine di sfondo con effetto parallax */
+.intro-image {
+  flex: 1 1 50%;
+  background-image: url('/assets/images/mclaren-team.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  position: relative;
+  z-index: 1;
+  transform: scale(1);
+  transition: transform 0.2s ease-out;
+}
+
+/* Overlay leggero per effetto testo sopra immagine */
+.intro-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sustainability-intro {
+    flex-direction: column;
+  }
+
+  .intro-text {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .intro-image {
+    order: -1;
+    min-height: 300px;
+  }
+}
+
+/* Sezione citazione Zak Brown */
+.quote-section {
+  background-color: var(--white);
+  border-left: 6px solid var(--papaya-orange);
+  margin: 3rem auto;
+  padding: 2.2rem 3rem;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.quote-section blockquote {
+  font-size: 1.8rem;
+  color: var(--dark-grey);
+  font-weight: 400;
+  line-height: 1.4;
+  font-style: italic;
+  margin: 0 0 1.5rem 0;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.author-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.author-info strong {
+  color: var(--dark-grey);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.author-info span {
+  color: var(--anthracite);
+  font-size: 0.9rem;
+  display: block;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Sezione documenti sostenibilità */
+.documents-section {
+  background-color: var(--anthracite);
+  color: var(--white);
+  padding: 3.4rem 6rem 3rem 6rem;
+}
+
+/* Header */
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2.3rem;
+  margin-top: 1.7rem;
+}
+
+.documents-header h2 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.documents-header h2 span {
+  display: block;
+  font-weight: 400;
+  margin-top: 0.4rem;
+}
+
+/* Card Report */
+.report-card {
+  background-color: var(--white);
+  color: var(--anthracite);
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 420px;
+  margin-left: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenuto testo */
+.report-info {
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  text-align: left;
+}
+
+.report-info h3 {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--black);
+}
+
+/* Barra inferiore “PDF | OPEN” */
+.report-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--papaya-orange);
+  color: var(--black);
+  font-weight: 400;
+  padding: 0.8rem 1.4rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.2s ease, border 0.3s ease;
+}
+
+/* effetto overlay nero da sinistra verso destra */
+.report-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--black);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.report-footer:hover::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.report-footer:hover {
+  color: var(--papaya-orange);
+  border-color: var(--black);
+}
+
+.report-footer span {
+  position: relative;
+  z-index: 2;
+}
+
+.pdf-label {
+  font-size: 0.85rem;
+}
+
+.open-label {
+  font-size: 1.15rem;
+}
+
+/* Select Custom - ispirato al sito ufficiale McLaren Racing */
+/* Contenitore principale */
+.year-selector {
+  position: relative;
+  width: 220px;
+  margin-bottom: 0;
+}
+
+/* Bottone principale */
+.selector-display {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 300;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.selector-display:hover {
+  background-color: var(--dark-grey);
+}
+
+/* Testo anno */
+.selected-year {
+  flex: 1;
+  text-align: left;
+}
+
+/* Freccia Papaya */
+.arrow {
+  color: var(--papaya-orange);
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+/* Lista dropdown */
+.dropdown-list {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark-grey);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  animation: fadeInDropdown 0.2s ease-out forwards;
+}
+
+/* Effetto fade-in */
+@keyframes fadeInDropdown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elementi dropdown */
+.dropdown-list li {
+  padding: 0.7rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: left;
+  border-left: 6px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover elemento */
+.dropdown-list li:hover {
+  background-color: rgba(0, 0, 0, 0.6); /* nero semitrasparente */
+  color: var(--papaya-orange);
+}
+
+/* Elemento selezionato */
+.dropdown-list li.active {
+  border-left: 3px solid var(--papaya-orange);
+  color: var(--papaya-orange);
+  background-color: rgba(0, 0, 0, 0.6);
+}
