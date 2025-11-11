@@ -1,4 +1,5 @@
 /* report-selector.css */
+/* Sezione centrale del sito McLaren Racing Sustainability Hub */
 
 /* Sezione introduttiva sostenibilità */
 .sustainability-intro {
@@ -12,27 +13,27 @@
   overflow: hidden;
 }
 
-/* Testo */
+/* Testo introduttivo */
 .intro-text {
   flex: 1 1 50%;
-  padding: 3rem 2rem;
+  padding: 1.3rem 6rem;
   z-index: 2;
   text-align: left;
 }
 
 .intro-text h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--anthracite);
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 
 .intro-text p {
-  line-height: 1.4;
+  line-height: 1.5;
   color: var(--anthracite);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 /* Immagine di sfondo con effetto parallax */
@@ -45,7 +46,7 @@
   position: relative;
   z-index: 1;
   transform: scale(1);
-  transition: transform 0.2s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 /* Overlay leggero per effetto testo sopra immagine */
@@ -59,20 +60,43 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Responsive */
+/* Responsive per sezione introduttiva */
+@media (max-width: 1024px) {
+  .intro-text {
+    padding: 2rem 3rem;
+  }
+}
+
 @media (max-width: 900px) {
   .sustainability-intro {
     flex-direction: column;
   }
 
   .intro-text {
-    padding: 2rem 1rem;
+    padding: 2rem 1.4rem;
     text-align: center;
   }
 
   .intro-image {
-    order: -1;
     min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .intro-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .intro-text p {
+    font-size: 1.05rem;
+    line-height: 1.4;
   }
 }
 
@@ -81,7 +105,7 @@
   background-color: var(--white);
   border-left: 6px solid var(--papaya-orange);
   margin: 3rem auto;
-  padding: 2.2rem 3rem;
+  padding: 2.4rem 3rem;
   max-width: 800px;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -89,12 +113,12 @@
 }
 
 .quote-section blockquote {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: var(--dark-grey);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.45;
   font-style: italic;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.6rem 0;
 }
 
 .quote-author {
@@ -122,32 +146,43 @@
   display: block;
 }
 
-.author-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+/* Responsive per sezione citazione */
+@media (max-width: 768px) {
+  .quote-section {
+    padding: 1.8rem 2rem;
+    margin: 2rem 1rem;
+  }
+
+  .quote-section blockquote {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .author-img {
+    width: 45px;
+    height: 45px;
+  }
 }
 
 /* Sezione documenti sostenibilità */
 .documents-section {
   background-color: var(--anthracite);
   color: var(--white);
-  padding: 3.4rem 6rem 3rem 6rem;
+  padding: 3rem 6rem 3rem 6rem;
 }
 
 /* Header */
 .documents-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 2.3rem;
-  margin-top: 1.7rem;
+  margin-bottom: 2.4rem;
+  margin-top: 1.8rem;
 }
 
 .documents-header h2 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   line-height: 1.1;
   color: var(--white);
   text-transform: uppercase;
@@ -180,7 +215,7 @@
 }
 
 .report-info h3 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.05rem;
   margin: 0;
   color: var(--black);
@@ -194,16 +229,16 @@
   align-items: center;
   background-color: var(--papaya-orange);
   color: var(--black);
-  font-weight: 400;
-  padding: 0.8rem 1.4rem;
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   z-index: 1;
   cursor: pointer;
-  transition: color 0.2s ease, border 0.3s ease;
+  transition: color 0.25s ease, border 0.3s ease;
 }
 
-/* effetto overlay nero da sinistra verso destra */
+/* Effetto overlay nero da sinistra verso destra */
 .report-footer::before {
   content: '';
   position: absolute;
@@ -227,6 +262,7 @@
   border-color: var(--black);
 }
 
+/* Testo della barra PDF | OPEN */
 .report-footer span {
   position: relative;
   z-index: 2;
@@ -237,7 +273,8 @@
 }
 
 .open-label {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 /* Select Custom - ispirato al sito ufficiale McLaren Racing */
@@ -255,11 +292,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1.4rem;
   cursor: pointer;
   user-select: none;
-  font-weight: 300;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1.1rem;
   transition: background-color 0.2s ease;
   border: 1px solid transparent;
 }
@@ -310,11 +347,11 @@
 
 /* Elementi dropdown */
 .dropdown-list li {
-  padding: 0.7rem 1rem;
-  font-size: 1.2rem;
-  font-weight: 300;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 400;
   text-align: left;
-  border-left: 6px solid transparent;
+  border-left: 4px solid transparent;
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -327,7 +364,53 @@
 
 /* Elemento selezionato */
 .dropdown-list li.active {
-  border-left: 3px solid var(--papaya-orange);
+  border-left: 4px solid var(--papaya-orange);
   color: var(--papaya-orange);
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive per sezione documenti */
+@media (max-width: 1024px) {
+  .documents-section {
+    padding: 2.5rem 3rem;
+  }
+
+  .documents-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .documents-section {
+    padding: 2.5rem 2rem;
+  }
+
+  .documents-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .year-selector {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .documents-header h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .year-selector {
+    align-self: center;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .report-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+  }
 }

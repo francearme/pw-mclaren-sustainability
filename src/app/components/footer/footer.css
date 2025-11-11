@@ -1,11 +1,10 @@
-/* footer.component.css */
-/* Footer in stile McLaren, coerente con la brand identity */
+/* footer.css */
 
 /* Contenitore principale */
 .footer {
   background-color: var(--white);
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 1.6rem 1rem 1.8rem;
   font-size: 0.9rem;
   color: var(--anthracite);
   position: relative;
@@ -20,7 +19,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10px;
+  height: 8px;
   background-color: var(--papaya-orange);
 }
 
@@ -30,68 +29,24 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
-}
-
-/* Linea di separazione */
-.divider {
-  width: 50%;
-  margin: 0.8rem auto;
-  border: none;
-  height: 1px;
-  background-color: var(--mid-grey);
-  opacity: 0.3;
-}
-
-/* Sezione crediti */
-.credits {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  margin-top: 0.6rem;
 }
 
-/* Quadrato papaya */
-.papaya-square {
-  width: 10px;
-  height: 10px;
-  background-color: var(--papaya-orange);
-  display: inline-block;
-  border-radius: 2px;
-}
-
-/* McLAREN RACING */
-.brand {
-  color: var(--black);
-  font-weight: 600;
-}
-
-/* Testo descrittivo */
-.details {
-  color: var(--anthracite);
-  font-weight: 400;
-}
-
-/* Nome autore */
-.author {
-  color: var(--dark-grey);
-  font-weight: 500;
-}
-
-/* Bottone con bordo papaya */
+/* Link principale */
 .highlight-link {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  color: var(--black); 
-  font-weight: 600; 
-  padding: 0.35rem 0.8rem;
+  color: var(--black);
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
   border-radius: 3px;
   border: 1.5px solid var(--papaya-orange);
   overflow: hidden;
   z-index: 1;
-  transition: color 0.2s ease, border 0.3s ease;
+  transition: color 0.25s ease, border 0.3s ease, transform 0.2s ease;
 }
 
 .highlight-link::before {
@@ -113,23 +68,98 @@
 }
 
 .highlight-link:hover {
-  color: var(--white);
+  color: var(--papaya-orange);
   border-color: var(--black);
+  transform: scale(1.03);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* Linea di separazione */
+.divider {
+  width: 45%;
+  margin: 1.2rem auto;
+  border: none;
+  height: 1px;
+  background-color: var(--mid-grey);
+  opacity: 0.25;
+}
+
+/* Sezione crediti */
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+/* Quadrato papaya */
+.papaya-square {
+  width: 10px;
+  height: 10px;
+  background-color: var(--papaya-orange);
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* McLAREN RACING */
+.brand {
+  color: var(--black);
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+
+/* Testo descrittivo */
+.details {
+  color: var(--anthracite);
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Nome autore */
+.author {
+  color: var(--dark-grey);
+  font-weight: 500;
+}
+
+/* Responsive tablet */
+@media (max-width: 900px) {
   .footer {
+    padding: 1.4rem 1rem 1.6rem;
     font-size: 0.85rem;
-    padding: 0.8rem 0.5rem;
   }
 
   .divider {
-    width: 75%;
+    width: 60%;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.2rem 0.8rem 1.4rem;
   }
 
+  .divider {
+    width: 70%;
+  }
+
+  /* Mantieni layout orizzontale */
   .credits {
-    flex-direction: column;
-    gap: 0.3rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.5rem;
+    text-align: center;
+  }
+
+  .papaya-square {
+    margin-right: 0.3rem;
+  }
+
+  .highlight-link {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
   }
 }
