@@ -1,30 +1,37 @@
-<!-- ReportSelectorComponent -->
-
+<!-- Sezione introduttiva con testo e immagine (zoom on scroll) -->
 <section class="sustainability-intro">
   <div class="intro-text">
     <h2>Welcome to McLaren Racing’s sustainability hub.</h2>
+
+    <!-- Testo introduttivo originale tratto dal sito ufficiale McLaren Racing -->
     <p>
       At McLaren Racing, we believe that high performance and sustainability go hand in hand. Racing
-      is about innovation, agility, and resilience — qualities that are just as crucial in our
+      is about innovation, agility, and resilience - qualities that are just as crucial in our
       response to the global climate and social challenges we face today.
     </p>
+
     <p>
-      Our approach to sustainability is led by data and science — understanding our impacts across
-      the themes of People and Planet — and using our unique capabilities and assets to make an
+      Our approach to sustainability is led by data and science - understanding our impacts across
+      the themes of People and Planet - and using our unique capabilities and assets to make an
       impact within our business, within motorsport and beyond.
     </p>
+
     <p>We’re committed to driving a sustainable future for our sport.</p>
   </div>
 
+  <!-- Immagine introduttiva con parallax -->
   <div class="intro-image"></div>
 </section>
 
+<!-- Card citazione del CEO Zak Brown -->
 <section class="quote-section">
   <blockquote>
     “Sustainability needs to be at the heart of everything we do. Now more than ever”
   </blockquote>
+
   <div class="quote-author">
     <img src="assets/images/zak-brown.jpg" alt="Zak Brown" class="author-img" />
+
     <div class="author-info">
       <strong>ZAK BROWN</strong>
       <span>CEO, McLaren Racing</span>
@@ -32,21 +39,23 @@
   </div>
 </section>
 
+<!-- Sezione dedicata ai documenti di sostenibilità -->
 <section class="documents-section">
+  <!-- Header: titolo + selettore degli anni -->
   <div class="documents-header">
     <h2>
       SUSTAINABILITY<br />
       <span>DOCUMENTS</span>
     </h2>
 
+    <!-- Selettore personalizzato degli anni -->
     <div class="year-selector">
-      <!-- Bottone principale -->
       <div class="selector-display" (click)="toggleDropdown()">
         <span class="selected-year">{{ selectedYear }}</span>
         <span class="arrow">▼</span>
       </div>
 
-      <!-- Dropdown -->
+      <!-- Dropdown con animazione -->
       <ul class="dropdown-list" *ngIf="dropdownOpen">
         <li
           *ngFor="let year of years"
@@ -59,11 +68,13 @@
     </div>
   </div>
 
+  <!-- Card del report selezionato -->
   <div *ngIf="selectedReport" class="report-card">
     <div class="report-info">
       <h3>{{ selectedReport.title }}</h3>
     </div>
 
+    <!-- Pulsante OPEN con overlay animato -->
     <div class="report-footer" (click)="openPdf(selectedReport.link)">
       <span class="pdf-label">PDF</span>
       <span class="open-label">OPEN</span>

@@ -9,7 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './report-selector.css',
 })
 export class ReportSelectorComponent {
-  // Effetto parallax sull’immagine di copertina
+  /* Effetto parallax leggero applicato all’immagine introduttiva.
+     L’evento di scroll modifica la trasformazione CSS (zoom progressivo). */
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const image = document.querySelector('.intro-image') as HTMLElement;
@@ -25,11 +26,13 @@ export class ReportSelectorComponent {
     image.style.transform = `scale(${Math.min(scale, 1.2)})`;
   }
 
-  // Anni disponibili
+  /* Elenco degli anni disponibili per la consultazione dei report */
   years = [2025, 2024, 2023, 2022];
+
+  /* Anno selezionato mostrato nel selettore personalizzato */
   selectedYear = 2025;
 
-  // Report disponibili per ogni anno
+  /* Array che associa ogni anno al relativo report ufficiale McLaren Racing */
   reports = [
     {
       year: 2025,
@@ -53,23 +56,25 @@ export class ReportSelectorComponent {
     },
   ];
 
-  // Ritorna il report in base all’anno selezionato
+  /* Restituisce il report associato all’anno selezionato */
   get selectedReport() {
     return this.reports.find((r) => r.year === this.selectedYear);
   }
 
-  // Apri PDF in nuova scheda
+  /* Apertura del PDF in una nuova scheda del browser */
   openPdf(link: string) {
     window.open(link, '_blank');
   }
 
-  // Gestione dropdown personalizzato
+  /* Gestione dello stato di apertura/chiusura del menu a tendina */
   dropdownOpen = false;
 
+  /* Alterna apertura e chiusura del dropdown */
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
+  /* Imposta l’anno selezionato e chiude la lista */
   selectYear(year: number) {
     this.selectedYear = year;
     this.dropdownOpen = false;

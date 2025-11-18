@@ -1,7 +1,4 @@
-/* report-selector.css */
-/* Sezione centrale del sito McLaren Racing Sustainability Hub */
-
-/* Sezione introduttiva sostenibilità */
+/* Sezione introduttiva: testo e immagine */
 .sustainability-intro {
   position: relative;
   display: flex;
@@ -36,7 +33,7 @@
   font-size: 1.2rem;
 }
 
-/* Immagine di sfondo con effetto parallax */
+/* Immagine introduttiva con effetto zoom on scroll */
 .intro-image {
   flex: 1 1 50%;
   background-image: url('/assets/images/mclaren-team.jpg');
@@ -49,7 +46,7 @@
   transition: transform 0.3s ease-out;
 }
 
-/* Overlay leggero per effetto testo sopra immagine */
+/* Overlay leggero sopra l’immagine */
 .intro-image::after {
   content: '';
   position: absolute;
@@ -60,13 +57,14 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Responsive per sezione introduttiva */
+/* Tablet */
 @media (max-width: 1024px) {
   .intro-text {
     padding: 2rem 3rem;
   }
 }
 
+/* Mobile grande */
 @media (max-width: 900px) {
   .sustainability-intro {
     flex-direction: column;
@@ -82,6 +80,7 @@
   }
 }
 
+/* Mobile piccolo: immagine in formato 16:9 */
 @media (max-width: 600px) {
   .intro-image {
     width: 100%;
@@ -100,7 +99,7 @@
   }
 }
 
-/* Sezione citazione Zak Brown */
+/* Card citazione Zak Brown */
 .quote-section {
   background-color: var(--white);
   border-left: 6px solid var(--papaya-orange);
@@ -121,6 +120,7 @@
   margin: 0 0 1.6rem 0;
 }
 
+/* Autore card */
 .quote-author {
   display: flex;
   align-items: center;
@@ -146,7 +146,7 @@
   display: block;
 }
 
-/* Responsive per sezione citazione */
+/* Mobile citazione */
 @media (max-width: 768px) {
   .quote-section {
     padding: 1.8rem 2rem;
@@ -164,14 +164,14 @@
   }
 }
 
-/* Sezione documenti sostenibilità */
+/* Sezione documenti */
 .documents-section {
   background-color: var(--anthracite);
   color: var(--white);
   padding: 3rem 6rem 3rem 6rem;
 }
 
-/* Header */
+/* Header della sezione */
 .documents-header {
   display: flex;
   justify-content: space-between;
@@ -197,7 +197,7 @@
   margin-top: 0.4rem;
 }
 
-/* Card Report */
+/* Card del report */
 .report-card {
   background-color: var(--white);
   color: var(--anthracite);
@@ -221,7 +221,7 @@
   color: var(--black);
 }
 
-/* Barra inferiore “PDF | OPEN” */
+/* Barra footer della card */
 .report-footer {
   position: relative;
   display: flex;
@@ -272,13 +272,13 @@
   font-size: 0.85rem;
 }
 
+/* Etichette dentro il pulsante */
 .open-label {
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-/* Select Custom - ispirato al sito ufficiale McLaren Racing */
-/* Contenitore principale */
+/* Selettore personalizzato degli anni */
 .year-selector {
   position: relative;
   width: 220px;
@@ -318,7 +318,7 @@
   margin-left: 0.5rem;
 }
 
-/* Lista dropdown */
+/* Dropdown */
 .dropdown-list {
   list-style: none;
   position: absolute;
@@ -369,7 +369,7 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Responsive per sezione documenti */
+/* Mobile: document section */
 @media (max-width: 1024px) {
   .documents-section {
     padding: 2.5rem 3rem;
@@ -403,9 +403,9 @@
   }
 
   .year-selector {
-    align-self: center;
     width: 100%;
     max-width: 260px;
+    align-self: center;
   }
 
   .report-card {
