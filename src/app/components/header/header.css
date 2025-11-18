@@ -1,6 +1,4 @@
-/* header.css */
-
-/* Contenitore principale */
+/* Header principale: barra di navigazione fissa con layout centrato */
 .header {
   position: sticky;
   top: 0;
@@ -12,7 +10,7 @@
   align-items: center;
 }
 
-/* Navbar generale */
+/* Contenitore della navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -21,7 +19,7 @@
   max-width: 1300px;
 }
 
-/* Blocchi di navigazione */
+/* Gruppi di navigazione (sinistra e destra) */
 .nav-left,
 .nav-right {
   display: flex;
@@ -32,7 +30,7 @@
   padding: 0;
 }
 
-/* Link di navigazione generici */
+/* Link di navigazione standard */
 .nav-left a,
 .nav-right a {
   position: relative;
@@ -46,13 +44,13 @@
   z-index: 1;
 }
 
-/* Hover per tutti i link */
+/* Effetto hover sui link */
 .nav-left a:hover,
 .nav-right a:hover {
   color: var(--papaya-orange);
 }
 
-/* Effetto slide nero per McLaren PLUS */
+/* Pulsante McLaren PLUS con overlay in hover */
 .highlight-link {
   position: relative;
   display: inline-block;
@@ -90,12 +88,12 @@
   color: var(--white);
 }
 
-/* Evidenziazione McLaren */
+/* Evidenziazione del testo McLaren */
 .nav-left span {
   color: var(--papaya-orange);
 }
 
-/* Pulsante STORE */
+/* Pulsante STORE con sfondo papaya e overlay in hover */
 .store {
   position: relative;
   display: inline-block;
@@ -132,7 +130,7 @@
   color: var(--white);
 }
 
-/* Logo */
+/* Logo McLaren Racing */
 .logo {
   width: 130px;
   height: auto;
@@ -143,12 +141,12 @@
   z-index: 1100;
 }
 
+/* Elementi dedicati alla versione mobile */
 .mobile {
   display: none;
 }
 
-/* Responsività mobile */
-/* Icona hamburger */
+/* Icona hamburger per dispositivi mobili */
 .menu-icon {
   font-size: 1.8rem;
   cursor: pointer;
@@ -156,7 +154,7 @@
   z-index: 1100;
 }
 
-/* Menu mobile nascosto di default */
+/* Menu mobile a comparsa laterale */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -179,7 +177,7 @@
   opacity: 1;
 }
 
-/* Link nel menu mobile */
+/* Struttura della lista nel menu mobile */
 .mobile-menu ul {
   list-style: none;
   padding: 0;
@@ -211,7 +209,7 @@
   color: var(--papaya-orange);
 }
 
-/* Responsività Header */
+/* Responsività dell'header per tablet e smartphone */
 @media (max-width: 950px) {
   .nav-left,
   .nav-right {
@@ -240,7 +238,7 @@
   }
 }
 
-/* Tablet e smartphone extra piccoli */
+/* Versione mobile stretta */
 @media (max-width: 500px) {
   .mobile-menu {
     width: 100%;
